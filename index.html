@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="SS Medical Store - आपकी स्वास्थ्य सेवा का विश्वसनीय साथी। पिथौरागढ़, उत्तराखंड में स्थित। होम डिलीवरी उपलब्ध।">
+    <title>SS Medical Store - Pithoragarh | आपकी स्वास्थ्य सेवा का विश्वसनीय साथी</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        /* Header Styles - Blue like the store sign */
+        header {
+            background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%);
+            color: #ffeb3b;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            border-bottom: 4px solid #ffeb3b;
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            font-size: 2.2rem;
+            font-weight: bold;
+            color: #ffeb3b;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            letter-spacing: 2px;
+        }
+
+        .logo-subtitle {
+            font-size: 0.7rem;
+            color: white;
+            font-weight: normal;
+            display: block;
+            margin-top: -5px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+            font-weight: 500;
+        }
+
+        .nav-links a:hover {
+            color: #ffeb3b;
+        }
+
+        .mobile-menu {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #ffeb3b;
+        }
+
+        /* Hero Section with Header Image */
+        .hero {
+            background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%);
+            color: white;
+            padding: 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-image {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            opacity: 0.3;
+        }
+
+        .hero-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            width: 90%;
+            max-width: 1200px;
+        }
+
+        .hero .store-name {
+            font-size: 3.5rem;
+            font-weight: bold;
+            color: #ffeb3b;
+            margin-bottom: 0.5rem;
+            letter-spacing: 3px;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.5);
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            margin-bottom: 1rem;
+            color: #ffeb3b;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 1rem 2.5rem;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+            text-decoration: none;
+            display: inline-block;
+            font-weight: 600;
+        }
+
+        .btn-primary {
+            background: #ffeb3b;
+            color: #1e3a8a;
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: #ffeb3b;
+            border: 3px solid #ffeb3b;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(255, 235, 59, 0.3);
+        }
+
+        /* Services Section */
+        .services {
+            padding: 4rem 2rem;
+            background: #f8fafc;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #1e3a8a;
+            position: relative;
+            padding-bottom: 1rem;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: #ffeb3b;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(30, 58, 138, 0.15);
+            transition: transform 0.3s, box-shadow 0.3s;
+            border-top: 4px solid #ffeb3b;
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 30px rgba(30, 58, 138, 0.25);
+        }
+
+        .service-icon {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .service-card h3 {
+            color: #1e3a8a;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Products Section */
+        .products {
+            padding: 4rem 2rem;
+            background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%);
+            color: white;
+        }
+
+        .products .section-title {
+            color: #ffeb3b;
+        }
+
+        .products .section-title::after {
+            background: white;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .product-category {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 1.5rem;
+            border-radius: 10px;
+            border-left: 4px solid #ffeb3b;
+            backdrop-filter: blur(10px);
+            transition: transform 0.3s, background 0.3s;
+        }
+
+        .product-category:hover {
+            transform: translateX(5px);
+            background: rgba(255, 255, 255, 0.25);
+        }
+
+        .product-category h4 {
+            color: #ffeb3b;
+        }
+
+        /* Store Showcase Section with Store Image */
+        .store-showcase {
+            padding: 4rem 2rem;
+            background: #f8fafc;
+        }
+
+        .store-image-container {
+            max-width: 1000px;
+            margin: 2rem auto;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(30, 58, 138, 0.3);
+            border: 5px solid #ffeb3b;
+        }
+
+        .store-image-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .store-description {
+            max-width: 800px;
+            margin: 2rem auto;
+            text-align: center;
+            font-size: 1.1rem;
+            color: #1e3a8a;
+            line-height: 1.8;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 4rem 2rem;
+            background: white;
+        }
+
+        .contact .section-title {
+            color: #1e3a8a;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .contact-info {
+            background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%);
+            color: white;
+            padding: 2.5rem;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(30, 58, 138, 0.3);
+        }
+
+        .contact-item {
+            margin-bottom: 2rem;
+            display: flex;
+            align-items: start;
+            gap: 1rem;
+        }
+
+        .contact-icon {
+            font-size: 1.8rem;
+            color: #ffeb3b;
+            min-width: 40px;
+        }
+
+        .contact-item h4 {
+            color: #ffeb3b;
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-item a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .contact-item a:hover {
+            color: #ffeb3b;
+        }
+
+        .map-container {
+            background: white;
+            padding: 1rem;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(30, 58, 138, 0.15);
+        }
+
+        /* Footer */
+        footer {
+            background: #1e3a8a;
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+            border-top: 4px solid #ffeb3b;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-content h3 {
+            color: #ffeb3b;
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .social-links a {
+            color: #ffeb3b;
+            font-size: 2rem;
+            transition: transform 0.3s;
+        }
+
+        .social-links a:hover {
+            transform: scale(1.2);
+        }
+
+        /* Floating WhatsApp Button */
+        .whatsapp-float {
+            position: fixed;
+            width: 65px;
+            height: 65px;
+            bottom: 40px;
+            right: 40px;
+            background-color: #25d366;
+            color: #FFF;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 35px;
+            box-shadow: 3px 3px 10px rgba(0,0,0,0.4);
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: transform 0.3s;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.15);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .mobile-menu {
+                display: block;
+            }
+
+            .hero-image {
+                height: 300px;
+            }
+
+            .hero .store-name {
+                font-size: 2rem;
+            }
+
+            .hero h1 {
+                font-size: 1.5rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .btn {
+                padding: 0.8rem 1.5rem;
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <div class="logo">
+                SS
+                <span class="logo-subtitle">मेडिकल स्टोर</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">होम</a></li>
+                <li><a href="#services">सेवाएं</a></li>
+                <li><a href="#products">उत्पाद</a></li>
+                <li><a href="#store">हमारी दुकान</a></li>
+                <li><a href="#contact">संपर्क करें</a></li>
+            </ul>
+            <div class="mobile-menu">☰</div>
+        </nav>
+    </header>
+
+    <!-- Hero Section with Header Image -->
+    <section class="hero" id="home">
+        <img src="ssheader.png" alt="SS Medical Store Header" class="hero-image" onerror="this.style.display='none'">
+        <div class="hero-content">
+            <div class="store-name">SS मेडिकल स्टोर</div>
+            <h1>आपकी स्वास्थ्य सेवा का विश्वसनीय साथी</h1>
+            <p>सभी प्रकार की दवाई खरीदें। यहीं से सस्ती दर व सेवा</p>
+            <p style="font-size: 1.1rem; margin-bottom: 2rem;">सिल्थम, पिथौरागढ़</p>
+            <div class="cta-buttons">
+                <a href="#contact" class="btn btn-primary">होम डिलीवरी के लिए संपर्क करें</a>
+                <a href="tel:+919897089352" class="btn btn-secondary">📞 अभी कॉल करें</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="container">
+            <h2 class="section-title">हमारी सेवाएं</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">💊</div>
+                    <h3>सभी प्रकार की दवाइयां</h3>
+                    <p>प्रिस्क्रिप्शन और बिना प्रिस्क्रिप्शन की दवाइयां उपलब्ध</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🚚</div>
+                    <h3>फ्री होम डिलीवरी</h3>
+                    <p>पिथौरागढ़ और आसपास के इलाकों में घर पर दवाई पहुंचाएं</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🩺</div>
+                    <h3>मेडिकल उपकरण</h3>
+                    <p>BP मॉनिटर, थर्मामीटर, ग्लूकोमीटर और अन्य उपकरण</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">💉</div>
+                    <h3>स्वास्थ्य सप्लीमेंट्स</h3>
+                    <p>विटामिन, प्रोटीन और सभी हेल्थ सप्लीमेंट्स</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🏥</div>
+                    <h3>प्राथमिक चिकित्सा</h3>
+                    <p>फर्स्ट एड किट और आपातकालीन सामग्री</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">👨‍⚕️</div>
+                    <h3>विशेषज्ञ सलाह</h3>
+                    <p>अनुभवी फार्मासिस्ट से मुफ्त परामर्श</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products" id="products">
+        <div class="container">
+            <h2 class="section-title">उपलब्ध उत्पाद</h2>
+            <div class="products-grid">
+                <div class="product-category">
+                    <h4>✓ एलोपैथिक दवाइयां</h4>
+                </div>
+                <div class="product-category">
+                    <h4>✓ आयुर्वेदिक दवाइयां</h4>
+                </div>
+                <div class="product-category">
+                    <h4>✓ होम्योपैथिक दवाइयां</h4>
+                </div>
+                <div class="product-category">
+                    <h4>✓ बेबी केयर प्रोडक्ट्स</h4>
+                </div>
+                <div class="product-category">
+                    <h4>✓ सर्जिकल उपकरण</h4>
+                </div>
+                <div class="product-category">
+                    <h4>✓ डायबिटीज केयर</h4>
+                </div>
+                <div class="product-category">
+                    <h4>✓ हेल्थ ड्रिंक्स</h4>
+                </div>
+                <div class="product-category">
+                    <h4>✓ स्किन केयर</h4>
+                </div>
+                <div class="product-category">
+                    <h4>✓ बैंडेज और ड्रेसिंग</h4>
+                </div>
+                <div class="product-category">
+                    <h4>✓ मेडिकल इंजेक्शन</h4>
+                </div>
+                <div class="product-category">
+                    <h4>✓ डेंटल केयर</h4>
+                </div>
+                <div class="product-category">
+                    <h4>✓ आई केयर प्रोडक्ट्स</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Store Showcase Section with Store Image -->
+    <section class="store-showcase" id="store">
+        <div class="container">
+            <h2 class="section-title">हमारी दुकान</h2>
+            <div class="store-image-container">
+                <img src="ssimg.png" alt="SS Medical Store - Siltham, Pithoragarh" onerror="this.src='https://via.placeholder.com/1000x600/1e3a8a/ffeb3b?text=SS+Medical+Store'">
+            </div>
+            <div class="store-description">
+                <p><strong>SS मेडिकल स्टोर</strong> सिल्थम, पिथौरागढ़ में स्थित एक विश्वसनीय मेडिकल स्टोर है। हम पिछले कई वर्षों से स्थानीय समुदाय को गुणवत्तापूर्ण दवाइयां और स्वास्थ्य सेवाएं प्रदान कर रहे हैं। हमारे पास अनुभवी फार्मासिस्ट हैं जो आपकी स्वास्थ्य संबंधी समस्याओं में सही मार्गदर्शन देते हैं।</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2 class="section-title">हमसे संपर्क करें</h2>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <span class="contact-icon">📍</span>
+                        <div>
+                            <h4>पता</h4>
+                            <p>बैंक रोड, सिल्थम<br>पिथौरागढ़, उत्तराखंड - 262501</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-icon">📞</span>
+                        <div>
+                            <h4>फोन नंबर</h4>
+                            <p><a href="tel:+919897089352">+91 98970 89352</a></p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-icon">💬</span>
+                        <div>
+                            <h4>WhatsApp ऑर्डर</h4>
+                            <p><a href="https://wa.me/919897089352" target="_blank">WhatsApp पर ऑर्डर करें</a></p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-icon">⏰</span>
+                        <div>
+                            <h4>खुलने का समय</h4>
+                            <p>सोमवार - शनिवार: 8:00 AM - 9:00 PM<br>रविवार: 9:00 AM - 8:00 PM</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="map-container">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3459.123456789!2d80.212461!3d29.5867697!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39a12551ca186e8f%3A0xd29c6add3645de65!2sSS%20Medical%20Store!5e0!3m2!1sen!2sin!4v1234567890" 
+                        width="100%" 
+                        height="350" 
+                        style="border:0; border-radius: 10px;" 
+                        allowfullscreen="" 
+                        loading="lazy">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <h3>SS मेडिकल स्टोर</h3>
+            <p>सभी प्रकार की दवाई खरीदें। यहीं से सस्ती दर व सेवा</p>
+            <p style="margin-top: 0.5rem;">सिल्थम, पिथौरागढ़, उत्तराखंड</p>
+            <div class="social-links">
+                <a href="#" title="Facebook">📘</a>
+                <a href="#" title="Instagram">📷</a>
+                <a href="https://wa.me/919897089352" target="_blank" title="WhatsApp">💬</a>
+            </div>
+            <p style="margin-top: 2rem; font-size: 0.9rem; opacity: 0.8;">© 2026 SS Medical Store. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/919897089352?text=नमस्ते,%20मुझे%20दवाई%20चाहिए" class="whatsapp-float" target="_blank" title="WhatsApp पर ऑर्डर करें">
+        💬
+    </a>
+</body>
+</html>
