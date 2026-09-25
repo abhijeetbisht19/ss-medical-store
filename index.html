@@ -79,6 +79,47 @@
             color: #ffeb3b;
         }
 
+        /* Order Now Bar - big call-to-action right below the header */
+        .order-now-bar {
+            background: #ffeb3b;
+            padding: 1.2rem 2rem;
+            text-align: center;
+            position: sticky;
+            top: 74px;
+            z-index: 999;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+
+        .order-now-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.6rem;
+            background: #25d366;
+            color: white;
+            font-size: 1.4rem;
+            font-weight: 800;
+            padding: 1rem 3rem;
+            border-radius: 50px;
+            text-decoration: none;
+            letter-spacing: 1px;
+            box-shadow: 0 6px 18px rgba(37, 211, 102, 0.5);
+            transition: transform 0.25s, box-shadow 0.25s;
+            border: 3px solid white;
+            animation: pulse-btn 2s infinite;
+        }
+
+        .order-now-btn:hover {
+            transform: scale(1.06);
+            box-shadow: 0 10px 25px rgba(37, 211, 102, 0.65);
+        }
+
+        @keyframes pulse-btn {
+            0% { box-shadow: 0 6px 18px rgba(37, 211, 102, 0.5); }
+            50% { box-shadow: 0 6px 26px rgba(37, 211, 102, 0.85); }
+            100% { box-shadow: 0 6px 18px rgba(37, 211, 102, 0.5); }
+        }
+
         /* Hero Section with Header Image */
         .hero {
             background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%);
@@ -449,6 +490,16 @@
                 padding: 0.8rem 1.5rem;
                 font-size: 1rem;
             }
+
+            .order-now-btn {
+                font-size: 1.1rem;
+                padding: 0.9rem 2rem;
+                width: 100%;
+            }
+
+            .order-now-bar {
+                top: 66px;
+            }
         }
     </style>
 </head>
@@ -458,7 +509,7 @@
         <nav>
             <div class="logo">
                 SS
-                <span class="logo-subtitle">मेडिकल स्टोर</span>
+                <span class="logo-subtitle">Medical Store</span>
             </div>
             <ul class="nav-links">
                 <li><a href="#home">होम</a></li>
@@ -471,6 +522,13 @@
         </nav>
     </header>
 
+    <!-- Big Order Now Bar -->
+    <div class="order-now-bar">
+        <a href="https://wa.me/917351590515?text=नमस्ते,%20मुझे%20दवाई%20ऑर्डर%20करनी%20है" class="order-now-btn" target="_blank">
+            🛒 अभी ऑर्डर करें
+        </a>
+    </div>
+
     <!-- Hero Section with Header Image -->
     <section class="hero" id="home">
         <img src="ssheader.png" alt="SS Medical Store Header" class="hero-image" onerror="this.style.display='none'">
@@ -481,7 +539,7 @@
             <p style="font-size: 1.1rem; margin-bottom: 2rem;">सिल्थम, पिथौरागढ़</p>
             <div class="cta-buttons">
                 <a href="#contact" class="btn btn-primary">होम डिलीवरी के लिए संपर्क करें</a>
-                <a href="tel:+919897089352" class="btn btn-secondary">📞 अभी कॉल करें</a>
+                <a href="tel:+917351590515" class="btn btn-secondary">📞 अभी कॉल करें</a>
             </div>
         </div>
     </section>
@@ -600,14 +658,14 @@
                         <span class="contact-icon">📞</span>
                         <div>
                             <h4>फोन नंबर</h4>
-                            <p><a href="tel:+919897089352">+91 98970 89352</a></p>
+                            <p><a href="tel:+917351590515">+91 73515 90515</a></p>
                         </div>
                     </div>
                     <div class="contact-item">
                         <span class="contact-icon">💬</span>
                         <div>
                             <h4>WhatsApp ऑर्डर</h4>
-                            <p><a href="https://wa.me/919897089352" target="_blank">WhatsApp पर ऑर्डर करें</a></p>
+                            <p><a href="https://wa.me/917351590515" target="_blank">WhatsApp पर ऑर्डर करें</a></p>
                         </div>
                     </div>
                     <div class="contact-item">
@@ -641,14 +699,14 @@
             <div class="social-links">
                 <a href="#" title="Facebook">📘</a>
                 <a href="#" title="Instagram">📷</a>
-                <a href="https://wa.me/919897089352" target="_blank" title="WhatsApp">💬</a>
+                <a href="https://wa.me/917351590515" target="_blank" title="WhatsApp">💬</a>
             </div>
             <p style="margin-top: 2rem; font-size: 0.9rem; opacity: 0.8;">© 2026 SS Medical Store. All rights reserved.</p>
         </div>
     </footer>
 
     <!-- Floating WhatsApp Button -->
-    <a href="https://wa.me/919897089352?text=नमस्ते,%20मुझे%20दवाई%20चाहिए" class="whatsapp-float" target="_blank" title="WhatsApp पर ऑर्डर करें">
+    <a href="https://wa.me/917351590515?text=नमस्ते,%20मुझे%20दवाई%20चाहिए" class="whatsapp-float" target="_blank" title="WhatsApp पर ऑर्डर करें">
         💬
     </a>
 </body>
